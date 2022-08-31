@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiLogbook.Pages.NewTrackPage"
+             Title="NewTrackPage">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="#45AF9A" />
+        </Style>
+    </ContentPage.Resources>
+    <ScrollView>
+        <Grid Margin="15,30,15,50"
+          RowSpacing="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Text="New Track for T-Roc" 
+                   HorizontalOptions="Center"
+                   FontSize="25"/>
+
+            <Frame Grid.Row="1"
+               Margin="15,0,15,0"
+               CornerRadius="20">
+                <StackLayout>
+                    <Label Text="Date" />
+                    <DatePicker FontSize="30"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            HeightRequest="50"/>
+                </StackLayout>
+            </Frame>
+
+            <StackLayout Grid.Row="2"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         Spacing="30"
+                         Orientation="Horizontal">
+                <StackLayout Spacing="10">
+                    <Label Text="Business"
+                           FontSize="20" />
+                    <BoxView Color="#45AF9A" 
+                             HeightRequest="5"/>
+                </StackLayout>
+
+                <StackLayout Spacing="10">
+                    <Label Text="Private"
+                           FontSize="20" />
+                    <BoxView Color="#45AF9A" 
+                             IsVisible="false"
+                             HeightRequest="5"/>
+                </StackLayout>
+            </StackLayout>
+
+            <Grid Grid.Row="3"
+                  ColumnSpacing="20"
+                  RowSpacing="20"
+                  Margin="15,0,15,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Frame CornerRadius="10"
+                       Padding="0">
+                    <StackLayout Spacing="0"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center">
+                        <Label Text="Start Odometer" />
+                        <Entry Text="400"
+                               HorizontalOptions="FillAndExpand"
+                               Keyboard="Numeric"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame CornerRadius="10"
+                       Grid.Column="1"
+                       Padding="0">
+                    <StackLayout HorizontalOptions="Center"
+                                 VerticalOptions="Center">
+                        <Label Text="Enmd Odometer" />
+                        <Entry Text="5000"
+                               Keyboard="Numeric"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="1"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       CornerRadius="10"
+                       Padding="15">
+                    <StackLayout >
+                        <Label Text="Customer"/>
+                        <Entry />
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="2"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       CornerRadius="10"
+                       Padding="15">
+                    <StackLayout >
+                        <Label Text="Destination"/>
+                        <Entry />
+                    </StackLayout>
+                </Frame>
+            </Grid>
+
+            <Button Grid.Row="4" 
+                    Text="Save" 
+                    BackgroundColor="#45AF9A"
+                    Clicked="Button_Clicked_1"/>
+        </Grid>
+    </ScrollView>
+</ContentPage>

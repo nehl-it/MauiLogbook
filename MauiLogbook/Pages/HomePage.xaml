@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiLogbook.Pages.HomePage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#45AF9A"
+             Title="HomePage">
+    <Grid Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid BackgroundColor="Transparent"
+              Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <HorizontalStackLayout>
+                <Switch OnColor="White"
+                        ThumbColor="Gray">
+                </Switch>
+                <Label Text="Auto track"
+                       TextColor="White"
+                       VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <Picker x:Name="picker"
+                    HorizontalOptions="End"
+                    TextColor="White"
+                    TitleColor="White"
+                    Title="Select a car">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>T-Roc</x:String>
+                        <x:String>Micra</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <StackLayout Grid.Row="1"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         Spacing="30"
+                         Orientation="Horizontal">
+                <StackLayout Spacing="10">
+                    <Label Text="Day"
+                           FontSize="20"
+                           TextColor="White" />
+                    <BoxView Color="White" 
+                             HeightRequest="5"/>
+                </StackLayout>
+
+                <StackLayout Spacing="10">
+                    <Label Text="Week"
+                           FontSize="20"
+                           TextColor="White" />
+                    <BoxView Color="White" 
+                             IsVisible="false"
+                             HeightRequest="5"/>
+                </StackLayout>
+
+                <StackLayout Spacing="10">
+                    <Label Text="Month"
+                           FontSize="20"
+                           TextColor="White" />
+                    <BoxView Color="White" 
+                             IsVisible="false"
+                             HeightRequest="5"/>
+                </StackLayout>
+
+                <StackLayout Spacing="10">
+                    <Label Text="Year"
+                           FontSize="20"
+                           TextColor="White" />
+                    <BoxView Color="White" 
+                             IsVisible="false"
+                             HeightRequest="5"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" 
+                         Spacing="10"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center">
+                <Label Text="This month" 
+                       FontSize="Large"
+                       TextColor="LightGray"
+                       HorizontalTextAlignment="Center"/>
+                <Label Text="40.80" 
+                       TextColor="White"
+                       HorizontalTextAlignment="Center"
+                       FontSize="60"/>
+            </StackLayout>
+        </Grid>
+
+        <Frame Grid.Row="1"
+               Padding="0,0,0,30"
+               Margin="0,0,0,-30"
+               BackgroundColor="White"
+               BorderColor="Transparent"
+               CornerRadius="30">
+
+            <Grid Margin="20"
+                  RowSpacing="20"
+                  ColumnSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       FontSize="Large">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span FontSize="30"
+                                  FontAttributes="Bold"
+                                  TextColor="#0a1043"
+                                  Text="Logbook"/>
+                            <Span FontSize="30"
+                                  TextColor="#7c829f"
+                                  Text=" entry" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Frame Grid.Row="1"
+                       Grid.Column="0"
+                       CornerRadius="30"
+                       BorderColor="Transparent"
+                       BackgroundColor="#e6dbcc">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1" />
+                    </Frame.GestureRecognizers>
+                    <StackLayout Spacing="10">
+                        <Image Source="./Resources/Images/odometer.svg"
+                               HeightRequest="30"
+                               WidthRequest="30"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"/>
+                        <Label Text="Track"
+                               HorizontalTextAlignment="Center"
+                               FontSize="Large"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="1"
+                       Grid.Column="1"
+                       CornerRadius="30"
+                       BorderColor="Transparent"
+                       BackgroundColor="#d0d6ee">
+                    <StackLayout Spacing="10">
+                        <Image Source="./Resources/Images/settings.svg"
+                               HeightRequest="30"
+                               WidthRequest="30"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"/>
+                        <Label Text="Settings"
+                               HorizontalTextAlignment="Center"
+                               FontSize="Large"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="2"
+                       Grid.Column="0"
+                       CornerRadius="30"
+                       BorderColor="Transparent"
+                       BackgroundColor="#a6e2e6">
+                    <StackLayout Spacing="10">
+                        <Image Source="./Resources/Images/odometer.svg"
+                               HeightRequest="30"
+                               WidthRequest="30"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"/>
+                        <Label Text="Odometer"
+                               HorizontalTextAlignment="Center"
+                               FontSize="Large"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="2"
+                       Grid.Column="1"
+                       CornerRadius="30"
+                       BorderColor="Transparent"
+                       BackgroundColor="#6be1c3">
+                    <StackLayout Spacing="10">
+                        <Image Source="./Resources/Images/purse.svg"
+                               HeightRequest="30"
+                               WidthRequest="30"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"/>
+                        <Label Text="Expenses"
+                               HorizontalTextAlignment="Center"
+                               FontSize="Large"/>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+
+        </Frame>
+
+    </Grid>
+</ContentPage>
