@@ -1,4 +1,4 @@
-# MauiLogbook
+# MauiLogbook (WiP)
 Application to track logs of the car
 
 ![image](https://user-images.githubusercontent.com/40561661/187639753-5e180a03-a176-469c-9f27-5910c0635e12.png)
